@@ -1,0 +1,164 @@
+from tkinter import *
+from PIL import Image, ImageTk
+
+
+#root window
+aditi_root = Tk()
+aditi_root.geometry("500x500")
+aditi_root.title("ANTIQUETTES SHOPPING GUIDE CHATBOT")
+aditi_root.minsize(200 , 200)
+aditi_root.maxsize(2000,1000)
+
+#frame
+#'''f1=Frame(aditi_root,borderwidth=19, bg="grey", relief=SUNKEN)
+#f1.pack(side=TOP, fill="x" , pady=100)'''
+
+
+#background image
+
+image=Image.open("background.jpg")
+photo=ImageTk.PhotoImage(image)                   
+hello_label = Label(aditi_root,image=photo)
+hello_label.pack(expand=True,fill=BOTH)
+
+
+#TITLE
+title_label=Label(hello_label,text="HELLO ANTIQUES",bg="black",fg="white", font=("algerian 40 bold italic"),bd=5)
+title_label.grid(row=0,column=2)
+
+blank1=Label(hello_label,text="                                   ")
+blank1.grid(row=1,column=0)
+
+blank2=Label(hello_label,text="                     ")
+blank2.grid(row=6,column=0)
+
+blank3=Label(hello_label,text="")
+blank3.grid(row=2)
+
+blank4=Label(hello_label,text="")
+blank4.grid(row=4)
+
+blank5=Label(hello_label,text="")
+blank5.grid(row=5)
+
+blank7=Label(hello_label,text="")
+blank7.grid(row=7)
+
+
+
+question1=Label(hello_label,text="       What do u want?(choose)       ",bg="black",fg="white",font=("Times 30 bold italic"),bd=3)
+question1.grid(row=1,column=1)
+
+
+def ques(hello_label):
+    question2=Label(hello_label,text="What's your next choice?(choose)",bg="black",fg="white",font=("Times 30 bold italic"),bd=3)
+    question2.grid(row=6,column=1)
+ques(hello_label)
+
+def fchoice1(hello_label):
+    choice1_buttons=Button(hello_label,text="   KIDS WEAR   ",bg="black",fg="white",font=("Times 20 bold italic"),bd=5,command=ques)
+    choice1_buttons.grid(row=3,column=1)
+fchoice1(hello_label)
+
+def fchoice2(hello_label):
+    choice2_buttons=Button(hello_label,text="    WOMENS WEAR    ",bg="black",fg="white",font=("Times 20 bold italic"),bd=5,command=ques)
+    choice2_buttons.grid(row=3,column=2)
+fchoice2(hello_label)
+
+def fchoice3(hello_label):
+    choice3_buttons=Button(hello_label,text="   MENS WEAR   ",bg="black",fg="white",font=("Times 20 bold italic"),bd=5,command=ques)
+    choice3_buttons.grid(row=3,column=3)
+fchoice3(hello_label)
+
+
+
+#next question
+#question2=Label(hello_label,text="What's your next choice?(choose)",bg="black",fg="white",font=("Times 25 italic"),bd=3,command=fchoice1)
+#question2.grid(row=6,column=1)
+
+blank8=Label(hello_label,text="                ")
+blank8.grid(row=8,column=2)
+
+
+def fchoice4(hello_label):
+    choice4_button=Button(hello_label,text="GIRLS WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice1)
+    choice4_button.grid(row=8,column=1)
+fchoice4(hello_label)
+
+
+def fchoice5(hello_label):
+    choice5_button=Button(hello_label,text="BOYS WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice1)
+    choice5_button.grid(row=8,column=2)
+fchoice5(hello_label)
+
+
+def fchoice6(hello_label):
+    choice6_button=Button(hello_label,text="ETHNIC WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice2)
+    choice6_button.grid(row=8,column=1)
+fchoice6(hello_label)
+
+
+def fchoice7(hello_label):
+    choice7_button=Button(hello_label,text="FORMAL WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice2)
+    choice7_button.grid(row=8,column=2)
+fchoice7(hello_label)
+
+def fchoice8(hello_label):
+    choice8_button=Button(hello_label,text="ETHNIC WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice3)
+    choice8_button.grid(row=8,column=1)
+fchoice8(hello_label)
+
+def fchoice9(hello_label):
+    choice9_button=Button(hello_label,text="FORMAL WEAR",bg="black",fg="white",font=("Times 20 bold italic"),bd=5, command=fchoice3)
+    choice9_button.grid(row=8,column=2)
+fchoice9(hello_label)
+
+
+blank9=Label(hello_label,text="")
+blank9.grid(row=9)
+
+
+def answer(hello_label):
+    ans_label=Label(hello_label,text="   Checkout following products     ",bg="black",fg="white",font=("Times 30 bold italic"),bd=3)
+    ans_label.grid(row=10,column=1)
+answer(hello_label)
+
+
+def fchoice10(hello_label):
+    choice10_label=Label(hello_label,text="Check - antiques1-50",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice4)
+    choice10_label.grid(row=11,column=1)
+fchoice10(hello_label)
+
+def fchoice11(hello_label):
+    choice11_label=Label(hello_label,text="Check - antiques51-110",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice5)
+    choice11_label.grid(row=11,column=1)
+fchoice11(hello_label)
+
+def fchoice12(hello_label):
+    choice12_label=Label(hello_label,text="Check - antiques110-200",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice6)
+    choice12_label.grid(row=11,column=1)
+fchoice12(hello_label)
+
+
+def fchoice13(hello_label):
+    choice13_label=Label(hello_label,text="Check - antiques200-300",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice7)
+    choice13_label.grid(row=11,column=1)
+fchoice13(hello_label)
+
+def fchoice14(hello_label):
+    choice14_label=Label(hello_label,text="Check - antiques300-380",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice8)
+    choice14_label.grid(row=11,column=1)
+fchoice14(hello_label)
+
+
+def fchoice15(hello_label):
+    choice15_label=Label(hello_label,text="Check - antiques380-450",bg="black",fg="white",font=("Times 20 bold italic"),bd=3, command=fchoice9)
+    choice15_label.grid(row=11,column=1)
+fchoice15(hello_label)
+
+feedback_label=Label(hello_label,text="GOOD DAY :) !!",bg="black",fg="white",font=("Times 40 bold italic"),bd=3)
+feedback_label.grid(row=13,column=2)
+
+
+aditi_root.mainloop()
+
